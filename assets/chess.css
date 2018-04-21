@@ -1,0 +1,11 @@
+body{
+    background-image: url("../assets/chessboard.png");
+    background-size: cover;
+    color:gray;
+}
+
+.container{
+    margin : auto;
+    width:960px;
+    text-align:center; 
+}
