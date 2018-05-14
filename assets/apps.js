@@ -1,15 +1,14 @@
 
-let timer = {
+//let timer = {
 
-	number: 31,
+//	number: 31,
 
-	run: function () {
+//	run: function () {
+//		this.stop();
+//		counter = setInterval(timer.increment, 1000);
+//},
 
-		counter = setInterval(timer.increment, 1000);
-
-	},
-
-	increment: function() {
+/*	increment: function() {
 
 		timer.number--;
 
@@ -17,40 +16,53 @@ let timer = {
 
       	if (timer.number === 0){
 
-        	timer.stop();
+			timer.stop();
+			alert("time is up")
+			if (counter >= numQuestions) {
+
+				$('#main').hide().fadeIn("slow");
+		
+				document.getElementById('main').innerHTML="Quiz Complete! You scored " + numCorrect + " out of " + numQuestions + "!";
+				
+			   
+				return; 
+		
+			}
 
 		}
 
 	},
+	*/
 
-	stop: function() {
+//	stop: function() {
+//		if (counter) {
+//			clearInterval(counter);
+//			counter = undefined;
+///		}
+//	}
 
-		clearInterval(counter);
-
-	}
-
-};
-
+//};
+let timerCountDown = 110;
 
 
 const quiz = [ {
 
     question:" What control the battlefield  of chess game?",
-    choices:["pawns","queen","knight","bishops"],
+    choices:["pawns","queen","knight","bishops","duck"],
     right:0,},
 
 
    {question:" who is the world chess champion?",
-    choices:[" Karpov,","Magnus Carlsen","Anand","Hikaru"],
+    choices:[" Karpov,","Magnus Carlsen","Anand","Hikaru","giri"],
     right:1,
 },
 { question:" What shape does knight makes when it moves?",
-   choices:["five-squares up and 1 left","a circle","zig-zag","L-shape" ],
+   choices:["five-squares up and 1 left","a circle","zig-zag","L-shape" ,"donut shape" ],
    right:3,
 },
 {
   question:" how many pieces are there in total",
-  choices:["16","32","48","64"],
+  choices:["16","32","48","64","1000"],
   right:1,
 },
 {
@@ -82,6 +94,8 @@ $('input[name="choice"]').hide;
 // display question function
 
 function checkMate(){
+	
+    $('#timeMachine').text(counter);
 
 
 
@@ -92,12 +106,15 @@ function checkMate(){
 
 	$('#answer1').text(quiz[counter].choices[1]);
 
-	$('#answer2').text(quiz[counter].choices[3]);
+	$('#answer2').text(quiz[counter].choices[2]);
+	
+	
+	$('#answer3').text(quiz[counter].choices[3]);
 
-	$('#answer3').text(quiz[counter].choices[1]);
+	$('#answer4').text(quiz[counter].choices[4]);
 
-    $('#answer4').text(quiz[counter].choices[3]);
-
+	timer.stop
+	timer.run();
 }
 
 
@@ -128,7 +145,7 @@ function validate() {
 
 
 
-// display first question
+// run function
 
 checkMate();
 
@@ -225,8 +242,7 @@ $('#backBtn').on('click', function() {
 
 	
 
-	// display previous question
 
-	checkMate();	
-
+	
+	
 });
